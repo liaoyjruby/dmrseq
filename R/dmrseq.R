@@ -231,7 +231,7 @@ dmrseq <- function(bs, testCovariate, adjustCovariate = NULL, cutoff = 0.1,
     
     if (is.character(adjustCovariate)) {
         if(is.character(matchCovariate)){
-          if(matchCovariate == adjustCovariate)
+          if(all(matchCovariate == adjustCovariate))
             stop("matchCovariate can't be identical to adjustCovariate")
         }
         adjustCovariate <- which(colnames(pData(bs)) %in% adjustCovariate)
